@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste de drag'n drop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="drag-drop ">
+        <!-- .drag-container -->
+        <div class="drag-container">
+            <h1>Toolbox</h1>
+
+            <div class="borda">
+                <div class="drag">
+                    <label for="">Input text: <input type="text" placeholder="Digite aqui:"></label>
+                    
+                    
+                </div>
+            </div>
+            <div class="borda">
+                <div class="drag">
+                    <h3>Checkbox</h3>
+                    <label for="">
+                        <input type="checkbox">opção 1</label>
+                    <label for="">
+                        <input type="checkbox">opção 2</label>
+
+                </div>
+            </div>
+            <div class="borda">
+                <div class="drag">
+                    <button>OK</button>
+                </div>
+            </div>
+        </div>
+        <!-- .drop-container -->
+        <div class="drop-container">
+
+        </div>
+    </div>
+    <!--Lixeira-->
+    <div class="lixeira">
+        Arraste aqui para apagar
+    </div>
+
+    <button id="btn-salvar">
+        Salvar
+    </button>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--Jquery-->
+    <script>
+
+        $(function () {
+            $('.drag').draggable({
+                connectToSortable: '.drop-container',
+                helper: 'clone'
+            });
+
+            $('.drop-container').sortable({
+                activate: function (event, ui) {
+                    $('.drop-container p').remove();
+                }
+            });
+
+            $('.lixeira').droppable({
+                hoverClass: 'lixeira-ativa',
+                drop: function (event, ui) {
+                    $(ui.draggable).remove();
+                }
+            });
+
+            
+    $('#btn-salvar').click(function(){
+        var valores = new Array();
+        
+          $('.drop-container .drag').each(function(){
+              valores.push( $(this).html() );
+          });
+
+          alert(valores);
+      });
+
+        });
+    </script>
+
+
+</body>
+
+</html>

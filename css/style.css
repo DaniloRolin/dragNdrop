@@ -1,0 +1,91 @@
+*{ 
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+   }
+   
+ body {
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: white;
+}
+ /* Drag e Drop system */
+.drag-drop{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row; 
+}
+ 
+ .drag-container{
+     width:30%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;  
+     background: #333;     
+     text-align: left;    
+     color: #fff;
+     height: 500px;
+     border: 1px solid gray;       
+ }
+ .borda{
+     width: 100%;
+     height:120px; 
+     border-top: 2px dotted red;
+     border-bottom: 2px dotted red;
+   
+     
+ }
+ .drag{
+    padding: 3% 4%;
+    width: 300px;
+    height: 80px;
+    margin-left:10px;
+    margin-top: 10px;
+    border: 2px solid yellow;
+    float: left;
+   align-items: left;   
+}
+
+ .drag button{
+    width: 50px;
+    height: 30px;
+    margin-left: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    background:linear-gradient(to right,white,gray);
+}
+ .drop-container{
+     width: 70%;
+     background: #333;     
+     color: #fff;
+     height: 500px;
+     border: 1px solid gray;     
+       
+ }
+
+
+
+/* Lixeira */
+ .lixeira {
+    margin: 20px 0;
+    background: #ddd;
+    border: 2px dotted #999;
+    text-align: center;
+    line-height: 50px;
+    color: #999;
+    font-weight: 700;
+    font-size: 18px;
+}
+.lixeira-ativa {
+    border: 2px dotted red;  
+}
+
+#btn-salvar{
+    width: 50px;
+    height: 30px;
+    margin-left: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    background:linear-gradient(to right,white,gray);
+}
